@@ -1,0 +1,422 @@
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #00d2ff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #00d2ff;
+    border-bottom: 2px solid #00d2ff;
+}
+
+/* Update main-container to account for the fixed nav height */
+.main-container {
+    margin-top: 80px; /* Pushes content down so it doesn't hide behind the nav */
+    width: 90%;
+    max-width: 1000px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Dreamy Space Background */
+    background: radial-gradient(circle at bottom, #1B2735 0%, #090A0F 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Creating a simple Starry effect */
+.stars-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
+    background-size: 550px 550px, 350px 350px;
+    z-index: -1;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 1000px; /* Wider for the side-by-side look */
+}
+
+/* THE PROFILE CARD - LARGER AND LIVELY */
+.profile-card {
+    background: rgba(255, 255, 255, 0.05); /* Glassmorphism effect */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    display: flex; /* Side by side layout */
+    align-items: center;
+    padding: 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.card-content {
+    flex: 1; /* Takes up left side */
+    text-align: left;
+    padding-right: 40px;
+}
+
+.name {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #00d2ff, #92fe9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bio p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+/* IMAGE ON THE RIGHT */
+.image-area {
+    flex: 0 0 300px; /* Fixed width for the photo */
+}
+
+.profile-pic-placeholder {
+    width: 300px;
+    height: 350px;
+    background: #333;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #00d2ff;
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+}
+
+/* BUTTONS WITH UNIQUE COLORS */
+.button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.interest-btn {
+    text-decoration: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Individual Button Colors */
+.basketball { background: #e67e22; } /* Orange */
+.hardware { background: #76b900; }   /* Nvidia Green */
+.travel { background: #3498db; }     /* Sky Blue */
+.stocks { background: #2ecc71; }     /* Money Green */
+.cars { background: #e74c3c; }       /* Racing Red */
+
+.interest-btn:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    filter: brightness(1.2);
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    .card-content { padding-right: 0; margin-bottom: 30px; }
+    .name { font-size: 2.5rem; }
+}
+
+.profile-image {
+    width: 300px;
+    height: 400px; /* Adjust height based on your photo's aspect ratio */
+    object-fit: cover; /* This prevents the image from looking squished */
+    border-radius: 20px;
+    border: 2px solid #00d2ff;
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+    display: block;
+}
+/* The Main Section Headers (like 'Who is Abhinav') */
+.bio-heading {
+    color: #00d2ff;
+    font-size: 1.8rem;
+    
+    /* INCREASED GAPS HERE */
+    margin-top: 60px;    /* Pushes it away from the previous section */
+    margin-bottom: 20px; /* Space between header and text */
+    
+    border-left: 4px solid #00d2ff;
+    padding-left: 15px;
+}
+
+/* The Sub-headers (like 'Early Curiosity') */
+.bio-subheading {
+    color: #ffffff;
+    font-size: 1.3rem;
+    
+    /* INCREASED GAPS HERE */
+    margin-top: 40px;    /* Distinct gap from previous paragraph */
+    margin-bottom: 15px; /* Little breathing room below */
+}
+/* ========================
+   TRAVEL PAGE STYLES 
+   ======================== */
+
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #aaaaaa;
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+}
+
+/* THE GRID LAYOUT */
+.trip-grid {
+    display: grid;
+    /* This automatically arranges cards: 1 column on mobile, 2 or 3 on desktop */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+/* INDIVIDUAL CARD STYLE */
+.trip-card {
+    background: rgba(255, 255, 255, 0.05); /* Dark Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden; /* Ensures image stays inside curved corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-10px); /* Lifts up on hover */
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
+    border-color: #00d2ff;
+}
+
+/* IMAGE STYLING */
+.trip-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crops image nicely to fit */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* TEXT CONTENT AREA */
+.trip-content {
+    padding: 20px;
+}
+
+.trip-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #00d2ff; /* Neon blue text for date/location */
+    margin-bottom: 10px;
+}
+
+.trip-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.trip-desc {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+/* ========================
+   ARTICLE PAGE STYLES 
+   ======================== */
+
+.article-container {
+    width: 90%;
+    max-width: 800px; /* Limits width so lines aren't too long to read */
+    margin: 100px auto 50px; /* Centers the article */
+    padding-bottom: 50px;
+}
+
+/* Back Button */
+.back-link {
+    display: inline-block;
+    color: #00d2ff;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.back-link:hover {
+    transform: translateX(-5px); /* Moves left slightly on hover */
+}
+
+/* The Big Hero Image */
+.article-hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.article-title {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.article-meta {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+.article-meta .divider {
+    margin: 0 10px;
+    color: #333;
+}
+
+/* The Reading Content */
+.article-content p {
+    color: #d1d1d1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.article-content h3 {
+    color: #00d2ff;
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+/* Images inside the text */
+.article-inline-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 30px 0;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* The 'Read Article' button on the main travel page */
+.read-article-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #00d2ff;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid #00d2ff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.read-article-btn:hover {
+    background: #00d2ff;
+    color: #000;
+}
+/* ========================
+   NEW GALLERY STYLES 
+   ======================== */
+
+/* Grid to hold multiple images side-by-side */
+.image-gallery {
+    display: grid;
+    /* This creates 3 columns nicely spaced */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Styling the images inside the gallery */
+.image-gallery img {
+    width: 100%;
+    height: 200px; /* Keeps them all the same height */
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    z-index: 2;
+}
+
+.caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 30px;
+}
